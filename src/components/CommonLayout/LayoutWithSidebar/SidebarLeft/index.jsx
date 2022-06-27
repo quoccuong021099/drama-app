@@ -18,13 +18,13 @@ const DrawerHeaderStyled = styled("div")(({ theme }) => ({
 }));
 
 const DrawerStyled = styled(MuiDrawer)(() => ({
-  width: 64,
   flexShrink: 0,
   whiteSpace: "nowrap",
   boxSizing: "border-box",
+  marginLeft: "84px",
 }));
 
-export default function HeaderCommon({ children }) {
+export default function SidebarLeft() {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -44,7 +44,7 @@ export default function HeaderCommon({ children }) {
         />
       </DrawerHeaderStyled>
       <Divider />
-      <List sx={{ py: 0 }}>
+      <List sx={{ py: 0, width: "84px" }}>
         {[1, 2, 3].map((text, index) => (
           <ListItem key={text} disablePadding sx={{ display: "block" }}>
             <ListItemButton

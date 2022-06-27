@@ -1,15 +1,22 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import CommonLayout from "./components/CommonLayout";
+import LayoutWithSidebar from "./components/CommonLayout/LayoutWithSidebar";
 import HomePage from "./pages/HomePage";
+import PersonalWall from "./pages/PersonalWall";
 
 function App() {
   return (
-    <CommonLayout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </CommonLayout>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <LayoutWithSidebar>
+            <HomePage />
+          </LayoutWithSidebar>
+        }
+      />
+      <Route path="/:id" element={<PersonalWall />} />
+    </Routes>
   );
 }
 
